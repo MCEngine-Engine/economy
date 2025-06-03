@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+}
+
+def mcengineApiVersion = findProperty('mcengine-api.version') ?: 'undefined'
+def mcengineCurrencyApiVersion = findProperty('mcengine-currency-api.version') ?: 'undefined'
+
+def papermcApiVersion = findProperty('papermc-api.version') ?: 'undefined'
+
+dependencies {
+    compileOnly "io.papermc.paper:paper-api:$papermcApiVersion"
+
+    implementation "io.github.mcengine:mcengine-api:$mcengineApiVersion"
+    implementation "io.github.mcengine:mcengine-currency-api:$mcengineCurrencyApiVersion"
+    compileOnly project(':common')
+}
+
+processResources {
+    def props = [version: version]
+    inputs.properties(props)
+    filteringCharset 'UTF-8'
+    filesMatching('plugin.yml') {
+        expand(props)
+    }
+}
+
+shadowJar {
+    archiveBaseName = "${project.jarName}-PaperMC"
+}
+
+build.dependsOn shadowJar

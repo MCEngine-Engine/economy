@@ -1,0 +1,9 @@
+enable: false
+
+# Database support
+# - SQLite
+database:
+  type: sqlite
+
+  sqlite:
+    path: currency.db

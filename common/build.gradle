@@ -1,0 +1,19 @@
+plugins {
+    id 'java-library'
+}
+
+def mcengineApiVersion = findProperty('mcengine-api.version') ?: 'undefined'
+def mcengineCurrencyApiVersion = findProperty('mcengine-currency-api.version') ?: 'undefined'
+
+def spigotmcApiVersion = findProperty('spigotmc-api.version') ?: 'undefined'
+
+dependencies {
+    compileOnly "org.spigotmc:spigot-api:$spigotmcApiVersion"
+
+    compileOnly "io.github.mcengine:mcengine-api:$mcengineApiVersion"
+    compileOnly "io.github.mcengine:mcengine-currency-api:$mcengineCurrencyApiVersion"
+}
+
+shadowJar {
+    archiveBaseName = "${project.jarName}-Common"
+}
