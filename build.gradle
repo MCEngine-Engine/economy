@@ -54,7 +54,7 @@ allprojects {
 
         maven {
             name = 'MCEngine API'
-            url = uri('https://maven.pkg.github.com/MCEngine/mcengine')
+            url = uri('https://maven.pkg.github.com/MCEngine/mcengine-api')
             credentials {
                 username = project.user_git_name
                 password = project.user_github_token ?: project.repository_token ?: project.organization_token
