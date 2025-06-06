@@ -1,7 +1,10 @@
 package io.github.mcengine.papermc.currency.engine;
 
+import io.github.mcengine.api.currency.MCEngineCurrencyApi;
 import io.github.mcengine.api.mcengine.MCEngineApi;
 import io.github.mcengine.api.mcengine.Metrics;
+import io.github.mcengine.common.currency.command.MCEngineCurrencyCommonCommand;
+import io.github.mcengine.common.currency.tabcompleter.MCEngineCurrencyCommonTabCompleter;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class MCEngineCurrencyPaperMC extends JavaPlugin {
@@ -20,6 +23,11 @@ public class MCEngineCurrencyPaperMC extends JavaPlugin {
             getServer().getPluginManager().disablePlugin(this);
             return;
         }
+
+        MCEngineCurrencyApi currencyApi = new MCEngineCurrencyApi(this);
+
+        getCommand("currency").setExecutor(new MCEngineCurrencyCommonCommand(currencyApi));
+        getCommand("currency").setTabCompleter(new MCEngineCurrencyCommonTabCompleter());
 
         // Load extensions
         MCEngineApi.loadExtensions(this, "addons", "AddOn");
