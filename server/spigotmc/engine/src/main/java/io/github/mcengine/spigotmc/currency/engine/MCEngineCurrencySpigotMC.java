@@ -33,7 +33,7 @@ public class MCEngineCurrencySpigotMC extends JavaPlugin {
         MCEngineApi.loadExtensions(this, "addons", "AddOn");
         MCEngineApi.loadExtensions(this, "dlcs", "DLC");
 
-        MCEngineApi.checkUpdate(this, "github", "MCEngine", "currency-engine", getConfig().getString("github.token", "null"));
+        MCEngineApi.checkUpdate(this, getLogger(), "github", "MCEngine", "currency-engine", getConfig().getString("github.token", "null"));
     }
 
     /**
