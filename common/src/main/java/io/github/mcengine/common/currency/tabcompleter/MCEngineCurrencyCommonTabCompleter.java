@@ -12,11 +12,11 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Tab completer for the /currency command, providing suggestions for subcommands, players, coin types, and amounts.
+ * Tab completer for the /currency command, providing suggestions for subcommands, players, coin types, and extensions.
  */
 public class MCEngineCurrencyCommonTabCompleter implements TabCompleter {
 
-    private static final List<String> SUBCOMMANDS = Arrays.asList("check", "add");
+    private static final List<String> SUBCOMMANDS = Arrays.asList("check", "add", "addon", "dlc");
     private static final List<String> COIN_TYPES = Arrays.asList("coin", "copper", "silver", "gold");
 
     @Override
@@ -26,17 +26,20 @@ public class MCEngineCurrencyCommonTabCompleter implements TabCompleter {
             return filter(SUBCOMMANDS, args[0]);
         }
 
+        // /currency addon|dlc <list>
+        if (args.length == 2 && (args[0].equalsIgnoreCase("addon") || args[0].equalsIgnoreCase("dlc"))) {
+            return filter(Collections.singletonList("list"), args[1]);
+        }
+
         // /currency check <coinType> or /currency check <player>
-        if (args.length == 2) {
-            if (args[0].equalsIgnoreCase("check")) {
-                List<String> suggestions = new ArrayList<>(COIN_TYPES);
-                if (sender.hasPermission("mcengine.currency.check.player")) {
-                    for (Player online : Bukkit.getOnlinePlayers()) {
-                        suggestions.add(online.getName());
-                    }
+        if (args.length == 2 && args[0].equalsIgnoreCase("check")) {
+            List<String> suggestions = new ArrayList<>(COIN_TYPES);
+            if (sender.hasPermission("mcengine.currency.check.player")) {
+                for (Player online : Bukkit.getOnlinePlayers()) {
+                    suggestions.add(online.getName());
                 }
-                return filter(suggestions, args[1]);
             }
+            return filter(suggestions, args[1]);
         }
 
         // /currency check <player> <coinType>

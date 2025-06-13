@@ -1,6 +1,7 @@
 package io.github.mcengine.common.currency.command;
 
 import io.github.mcengine.api.currency.MCEngineCurrencyApi;
+import io.github.mcengine.api.mcengine.MCEngineApi;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.OfflinePlayer;
@@ -8,8 +9,6 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-
-import java.util.UUID;
 
 /**
  * Handles the /currency command with subcommands for checking and adding player balances.
@@ -38,6 +37,18 @@ public class MCEngineCurrencyCommonCommand implements CommandExecutor {
      */
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+
+        // /currency addon list or /currency dlc list
+        if (args.length == 2 && ("addon".equalsIgnoreCase(args[0]) || "dlc".equalsIgnoreCase(args[0]))
+                && "list".equalsIgnoreCase(args[1])) {
+            if (sender instanceof Player player) {
+                return MCEngineApi.handleExtensionList(player, currencyApi.getPlugin(), args[0]);
+            } else {
+                sender.sendMessage(ChatColor.RED + "Only players can run this command.");
+                return true;
+            }
+        }
+
         // Player checking their own balance
         if (args.length == 2 && args[0].equalsIgnoreCase("check") && sender instanceof Player player) {
             String coinType = args[1].toLowerCase();
@@ -115,6 +126,8 @@ public class MCEngineCurrencyCommonCommand implements CommandExecutor {
         sender.sendMessage(ChatColor.YELLOW + "/currency check <coinType>");
         sender.sendMessage(ChatColor.YELLOW + "/currency check <player> <coinType> (OP)");
         sender.sendMessage(ChatColor.YELLOW + "/currency add <player> <coinType> <amount> (OP)");
+        sender.sendMessage(ChatColor.YELLOW + "/currency addon list");
+        sender.sendMessage(ChatColor.YELLOW + "/currency dlc list");
         return true;
     }
 
