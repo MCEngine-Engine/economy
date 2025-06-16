@@ -30,8 +30,18 @@ public class MCEngineCurrencyPaperMC extends JavaPlugin {
         getCommand("currency").setTabCompleter(new MCEngineCurrencyCommonTabCompleter());
 
         // Load extensions
-        MCEngineApi.loadExtensions(this, "addons", "AddOn");
-        MCEngineApi.loadExtensions(this, "dlcs", "DLC");
+        MCEngineApi.loadExtensions(
+            this,
+            "io.github.mcengine.api.currency.addon.IMCEngineCurrencyAddOn",
+            "addons",
+            "AddOn"
+            );
+        MCEngineApi.loadExtensions(
+            this,
+            "io.github.mcengine.api.currency.dlc.IMCEngineCurrencyDLC",
+            "dlcs",
+            "DLC"
+            );
 
         MCEngineApi.checkUpdate(this, getLogger(), "github", "MCEngine", "currency-engine", getConfig().getString("github.token", "null"));
     }
