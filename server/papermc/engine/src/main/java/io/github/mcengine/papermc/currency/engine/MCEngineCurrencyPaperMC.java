@@ -32,13 +32,13 @@ public class MCEngineCurrencyPaperMC extends JavaPlugin {
         // Load extensions
         MCEngineApi.loadExtensions(
             this,
-            "io.github.mcengine.api.currency.extension.addon.IMCEngineCurrencyLibrary",
+            "io.github.mcengine.api.currency.extension.library.IMCEngineCurrencyLibrary",
             "libraries",
             "Library"
             );
         MCEngineApi.loadExtensions(
             this,
-            "io.github.mcengine.api.currency.extension.dlc.IMCEngineCurrencyAPI",
+            "io.github.mcengine.api.currency.extension.api.IMCEngineCurrencyAPI",
             "apis",
             "API"
             );
