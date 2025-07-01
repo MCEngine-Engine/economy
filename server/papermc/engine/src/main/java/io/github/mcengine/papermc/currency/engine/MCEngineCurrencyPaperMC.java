@@ -1,7 +1,7 @@
 package io.github.mcengine.papermc.currency.engine;
 
-import io.github.mcengine.api.mcengine.MCEngineApi;
-import io.github.mcengine.api.mcengine.Metrics;
+import io.github.mcengine.api.core.MCEngineApi;
+import io.github.mcengine.api.core.Metrics;
 import io.github.mcengine.common.currency.MCEngineCurrencyCommon;
 import io.github.mcengine.common.currency.command.MCEngineCurrencyCommonCommand;
 import io.github.mcengine.common.currency.tabcompleter.MCEngineCurrencyCommonTabCompleter;
