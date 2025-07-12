@@ -1,5 +1,5 @@
 [![Bstats](https://raw.githubusercontent.com/intergrav/devins-badges/refs/heads/v3/assets/cozy/available/bstats_vector.svg)](https://bstats.org/plugin/bukkit/MCEngineCurrency/26077)
-[![Spigot](https://raw.githubusercontent.com/intergrav/devins-badges/refs/heads/v3/assets/cozy/available/spigot_vector.svg)](https://www.spigotmc.org/resources/mcengine-currency-engine.125827/)
+[![Spigot](https://raw.githubusercontent.com/intergrav/devins-badges/refs/heads/v3/assets/cozy/available/spigot_vector.svg)](https://www.spigotmc.org/resources/currency-engine.125827/)
 
 # ℹ️ Information
 
