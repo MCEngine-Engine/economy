@@ -3,11 +3,11 @@ plugins {
 }
 
 dependencies {
-    compileOnly 'io.papermc.paper:paper-api:1.21.7-R0.1-SNAPSHOT'
+    compileOnly 'io.papermc.paper:paper-api:1.21.8-R0.1-SNAPSHOT'
 
-    implementation 'io.github.mcengine:core-api:1.0.6-RELEASE'
-    implementation 'io.github.mcengine:currency-api:1.0.4-RELEASE'
-    implementation 'io.github.mcengine:currency-common:1.0.2-RELEASE'
+    implementation 'io.github.mcengine:core-api:2025.0.7-22'
+    implementation 'io.github.mcengine:currency-api:2025.0.7-22-1'
+    implementation 'io.github.mcengine:currency-common:2025.0.7-22'
 }
 
 processResources {
