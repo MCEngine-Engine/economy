@@ -1,6 +1,6 @@
 package io.github.mcengine.spigotmc.currency.engine;
 
-import io.github.mcengine.api.core.MCEngineApi;
+import io.github.mcengine.api.core.MCEngineCoreApi;
 import io.github.mcengine.api.core.Metrics;
 import io.github.mcengine.common.currency.MCEngineCurrencyCommon;
 import io.github.mcengine.common.currency.command.MCEngineCurrencyCommonCommand;
@@ -30,32 +30,32 @@ public class MCEngineCurrencySpigotMC extends JavaPlugin {
         getCommand("currency").setTabCompleter(new MCEngineCurrencyCommonTabCompleter());
 
         // Load extensions
-        MCEngineApi.loadExtensions(
+        MCEngineCoreApi.loadExtensions(
             this,
             "io.github.mcengine.api.currency.extension.addon.IMCEngineCurrencyLibrary",
             "libraries",
             "Library"
             );
-        MCEngineApi.loadExtensions(
+        MCEngineCoreApi.loadExtensions(
             this,
             "io.github.mcengine.api.currency.extension.dlc.IMCEngineCurrencyAPI",
             "apis",
             "API"
             );
-        MCEngineApi.loadExtensions(
+        MCEngineCoreApi.loadExtensions(
             this,
             "io.github.mcengine.api.currency.extension.addon.IMCEngineCurrencyAddOn",
             "addons",
             "AddOn"
             );
-        MCEngineApi.loadExtensions(
+        MCEngineCoreApi.loadExtensions(
             this,
             "io.github.mcengine.api.currency.extension.dlc.IMCEngineCurrencyDLC",
             "dlcs",
             "DLC"
             );
 
-        MCEngineApi.checkUpdate(this, getLogger(), "github", "MCEngine", "currency-engine", getConfig().getString("github.token", "null"));
+        MCEngineCoreApi.checkUpdate(this, getLogger(), "github", "MCEngine", "currency-engine", getConfig().getString("github.token", "null"));
     }
 
     /**
