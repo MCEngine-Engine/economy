@@ -66,6 +66,7 @@ allprojects {
         configureGitHubRepo('MCEngine Core API', 'https://maven.pkg.github.com/MCEngine-API/core')
         configureGitHubRepo('MCEngine Currency API', 'https://maven.pkg.github.com/MCEngine-API/currency')
         configureGitHubRepo('MCEngine Currency Common', 'https://maven.pkg.github.com/MCEngine-Common/currency')
+        configureGitHubRepo('MCEngine Party Common', 'https://maven.pkg.github.com/MCEngine-Common/party')
     }
 }
 
