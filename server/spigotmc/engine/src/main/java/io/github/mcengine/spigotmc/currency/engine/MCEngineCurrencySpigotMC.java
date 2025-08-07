@@ -74,8 +74,8 @@ public class MCEngineCurrencySpigotMC extends JavaPlugin {
             this,
             getLogger(),
             "github",
-            "MCEngine",
-            "currency-engine",
+            "MCEngine-Engine",
+            "currency",
             getConfig().getString("github.token", "null")
         );
     }
