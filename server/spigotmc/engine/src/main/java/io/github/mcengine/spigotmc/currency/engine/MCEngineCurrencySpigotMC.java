@@ -58,6 +58,12 @@ public class MCEngineCurrencySpigotMC extends JavaPlugin {
         );
         MCEngineCoreApi.loadExtensions(
             this,
+            "io.github.mcengine.api.currency.extension.agent.IMCEngineCurrencyAgent",
+            "agents",
+            "Agent"
+        );
+        MCEngineCoreApi.loadExtensions(
+            this,
             "io.github.mcengine.api.currency.extension.addon.IMCEngineCurrencyAddOn",
             "addons",
             "AddOn"
