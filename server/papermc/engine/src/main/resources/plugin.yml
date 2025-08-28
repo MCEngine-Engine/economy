@@ -1,12 +1,12 @@
-name: MCEngineCurrency
+name: MCEngineEconomy
 version: ${version}
-main: io.github.mcengine.papermc.currency.engine.MCEngineCurrencyPaperMC
+main: io.github.mcengine.papermc.economy.engine.MCEngineEconomyPaperMC
 author: MCEngine
-description: MCEngine Currency
+description: MCEngine Economy
 api-version: 1.13
 commands:
-  currency:
-    description: Manage and check currency balances.
-    usage: /currency check <coinType> | /currency check <player> <coinType> | /currency add <player> <coinType> <amount>
-    permission: mcengine.currency
+  economy:
+    description: Manage and check economy balances.
+    usage: /economy check <coinType> | /economy check <player> <coinType> | /economy add <player> <coinType> <amount>
+    permission: mcengine.economy
     permission-message: You do not have permission to use this command.
