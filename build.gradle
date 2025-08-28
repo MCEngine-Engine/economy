@@ -19,11 +19,11 @@ ext {
     organization_token = System.getenv('ORGANIZATION_TOKEN')
 
     // Repository
-    repository_name = System.getenv('REPOSITORY_NAME') ?: 'currency'
+    repository_name = System.getenv('REPOSITORY_NAME') ?: 'economy'
     repository_token = System.getenv('REPOSITORY_TOKEN')
 
     /* Project Information */
-    jarName = System.getenv('PROJECT_NAME') ?: 'MCEngineCurrency'
+    jarName = System.getenv('PROJECT_NAME') ?: 'MCEngineEconomy'
 }
 
 allprojects {
@@ -47,10 +47,10 @@ allprojects {
         configureGitHubRepo('MCEngine Core API', 'https://maven.pkg.github.com/MCEngine-API/core')
 
         configureGitHubRepo('MCEngine Artificial Intelligence API', 'https://maven.pkg.github.com/MCEngine-API/artificialintelligence')
-        configureGitHubRepo('MCEngine Currency API', 'https://maven.pkg.github.com/MCEngine-API/currency')
+        configureGitHubRepo('MCEngine Economy API', 'https://maven.pkg.github.com/MCEngine-API/economy')
         configureGitHubRepo('MCEngine Hologram API', 'https://maven.pkg.github.com/MCEngine-API/hologram')
 
-        configureGitHubRepo('MCEngine Currency Common', 'https://maven.pkg.github.com/MCEngine-Common/currency')
+        configureGitHubRepo('MCEngine Economy Common', 'https://maven.pkg.github.com/MCEngine-Common/economy')
         configureGitHubRepo('MCEngine Party Common', 'https://maven.pkg.github.com/MCEngine-Common/party')
 
         mavenCentral()
@@ -78,7 +78,7 @@ subprojects {
     apply plugin: 'java'
     apply plugin: 'com.gradleup.shadow'
 
-    version = project.findProperty('mcengine-currency.version')
+    version = project.findProperty('mcengine-economy.version')
 
     tasks.named('jar').configure {
         enabled = false
@@ -123,4 +123,3 @@ tasks.named('jar').configure {
 }
 
 build.dependsOn(shadowJar)
-

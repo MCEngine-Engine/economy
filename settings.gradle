@@ -1,4 +1,4 @@
-rootProject.name = 'mcengine-currency'
+rootProject.name = 'mcengine-economy'
 
 // Helper to include subprojects in a given path with correct project prefix
 def includeSubprojects(String platform) {
