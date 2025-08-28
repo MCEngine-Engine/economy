@@ -15,7 +15,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class MCEngineEconomyPaperMC extends JavaPlugin {
 
     /** Metrics project id for bStats. */
-    private static final int METRICS_PROJECT_ID = 26077;
+    private static final int METRICS_PROJECT_ID = 22562;
 
     /** Command root namespace for this module. */
     private static final String COMMAND_NAMESPACE = "economy";
