@@ -3,6 +3,20 @@ licenses:
   license: free
   secret_key:
 
+project:
+  platform: GitHub
+  token:
+  org:
+    name: MCEngine-Engine
+    url: https://github.com/MCEngine-Engine
+  repo:
+    name: economy
+    url: https://github.com/MCEngine-Engine/economy
+    issue:
+      url: https://github.com/MCEngine-Engine/economy/issues
+  website:
+    url: https://mcengine-website.github.io/economy
+
 # Database support
 # - SQLite
 database:
