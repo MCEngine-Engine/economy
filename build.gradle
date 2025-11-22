@@ -12,6 +12,7 @@ ext {
     user_git_name = System.getenv('USER_GIT_NAME')
 
     // GitHub
+    user_github_name = System.getenv('USER_GITHUB_NAME')
     user_github_token = System.getenv('USER_GITHUB_TOKEN')
 
     // Organization
@@ -38,20 +39,14 @@ allprojects {
                 name = repoName
                 url = uri(repoUrl)
                 credentials {
-                    username = project.user_git_name
+                    username = project.user_github_name
                     password = project.user_github_token ?: project.repository_token ?: project.organization_token
                 }
             }
         }
 
         configureGitHubRepo('MCEngine Core API', 'https://maven.pkg.github.com/MCEngine-API/core')
-
-        configureGitHubRepo('MCEngine Artificial Intelligence API', 'https://maven.pkg.github.com/MCEngine-API/artificialintelligence')
         configureGitHubRepo('MCEngine Economy API', 'https://maven.pkg.github.com/MCEngine-API/economy')
-        configureGitHubRepo('MCEngine Hologram API', 'https://maven.pkg.github.com/MCEngine-API/hologram')
-
-        configureGitHubRepo('MCEngine Economy Common', 'https://maven.pkg.github.com/MCEngine-Common/economy')
-        configureGitHubRepo('MCEngine Party Common', 'https://maven.pkg.github.com/MCEngine-Common/party')
 
         mavenCentral()
         mavenLocal()
